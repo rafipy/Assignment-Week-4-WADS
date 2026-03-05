@@ -143,7 +143,7 @@ router.put("/:id", (req, res) => {
 
   const { title, description, status, dueDate } = req.body;
 
-  if (!title || !description)
+  if (!title || !description || !status || !dueDate)
     return res.status(400).json({ message: "Missing required fields" });
 
   assignment.title = title;
